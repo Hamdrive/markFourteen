@@ -1,6 +1,3 @@
-// var stocksInit = document.querySelector("#init-price")
-// var stocksQty = document.querySelector("#stocks-qty")
-// var stocksCurr = document.querySelector("#curr-price")
 var stocksInfo = document.querySelectorAll("#stock")
 var calcBtn = document.querySelector("#calc-btn")
 var output = document.querySelector(".output")
@@ -13,7 +10,7 @@ function handleClick(){
             stockArr[index] = stocksInfo[index].value;
         } else {
             showMessage("Enter all the fields!!");
-            break;
+            return;
         }
     }
     calculateProfitOrLoss(stockArr)
@@ -22,14 +19,18 @@ function handleClick(){
 function calculateProfitOrLoss(stockArr){
     if(stockArr[0] < stockArr[2]){
         var profit = (stockArr[2] - stockArr[0]) * stockArr[1];
-        var profitPercentage = profit * 100;
+        var profitPercentage = profit/stockArr[0] * 100;
 
-        showMessage(`Congrats!! You made a profit of ${profit} and an overall of ${profitPercentage}%`)
+        showMessage(`Congrats!! You made a profit of Rs. ${profit.toFixed(2)} and an overall profit of ${profitPercentage.toFixed(2)}%`)
+        document.body.style.backgroundColor = "rgba(0, 128, 0, 0.801)"
+
     } else if(stockArr[0] > stockArr[2]){
         var loss = (stockArr[0] - stockArr[2]) * stockArr[1];
-        var lossPercentage = loss * 100;
+        var lossPercentage = loss/stockArr[0] * 100;
 
-        showMessage(`Oh no no!! You made a loss of ${loss} and an overall of ${lossPercentage}%`)
+        showMessage(`Oh no no!! You made a loss of Rs. ${loss.toFixed(2)} and an overall loss of ${lossPercentage.toFixed(2)}%`)
+
+        document.body.style.backgroundColor = "rgba(255, 0, 0, 0.76)"
     } else {
         showMessage("If you'd put in the effort then you'd see some change here :)")
     }
