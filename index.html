@@ -9,23 +9,23 @@
 </head>
 <body>
     <div class="title">
-        <p>Check if you're at Profit or Loss</p>
+        <p>Profit 📈 or Loss 📉</p>
     </div>
     <div class="stock-inputs">
         <div class="init">
-            <label for="stock">Initial Price:</label>
-            <input type="number" name="init-price" id="stock" min="1">
+            <label for="stock">Initial Price (Rs.):</label>
+            <input type="number" name="init-price" id="stock" min="1" step="0.01">
         </div>
         <div class="qty">
             <label for="stock">Quantity of Stocks:</label>
             <input type="number" name="stocks-qty" id="stock" min="1">
         </div>
         <div class="curr">
-            <label for="stock">Current Price:</label>
+            <label for="stock">Current Price (Rs.):</label>
             <input type="number" name="curr-price" id="stock" min="1">
         </div>
     </div>
-    <div class="output"></div>
+    <div class="output">&nbsp;</div>
     <div class="calc">
         <button id="calc-btn">Calculate!</button>
     </div>
