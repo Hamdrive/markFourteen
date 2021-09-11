@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #7e00f35b;
+}
+
+.title{
+    font-size: 2.75rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+}
+
+.stock-inputs{
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.init, .qty, .curr{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+label{
+    margin-bottom: 0.7rem;
+}
+
+input{
+    font-size: 1.5rem;
+    padding: 0.4rem;
+    border-radius: 0.8rem;
+    text-align: center;
+    border: 2px solid black;
+}
+
+#calc-btn {
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 2rem;
+    background-color: #5a00afa4;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: 2px solid #000000;
+    font-weight: 600;
+}
+
+#calc-btn:hover {
+    background-color: #450086d0;
+    transition: 0.1s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.output{
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
