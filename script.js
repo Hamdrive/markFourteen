@@ -5,24 +5,30 @@ var output = document.querySelector(".output")
 function handleClick(){
     var stockArr = [];
     for(var index = 0; index < stocksInfo.length; index++){
-        console.log(stocksInfo[index].value)
         if(stocksInfo[index].value){
             stockArr[index] = stocksInfo[index].value;
         } else {
-            showMessage("Enter all the fields!!");
+            showMessage("If you have'nt invested anything, why are you here?");
             return;
         }
     }
-    calculateProfitOrLoss(stockArr)
+    if(checkValues(stockArr)){
+        calculateProfitOrLoss(stockArr)
+    } else {
+        showMessage("Don't play around, this is *YOUR* investment we are checking!")
+    }
 }
 
+function checkValues(stockArr){
+    return stockArr.every((val) => val > 0);
+}
 function calculateProfitOrLoss(stockArr){
     if(stockArr[0] < stockArr[2]){
         var profit = (stockArr[2] - stockArr[0]) * stockArr[1];
         var profitPercentage = profit/stockArr[0] * 100;
 
         showMessage(`Congrats!! You made a profit of Rs. ${profit.toFixed(2)} and an overall profit of ${profitPercentage.toFixed(2)}%`)
-        document.body.style.backgroundColor = "rgba(0, 128, 0, 0.801)"
+        document.body.style.backgroundColor = "rgba(0, 150, 0, 0.801)"
 
     } else if(stockArr[0] > stockArr[2]){
         var loss = (stockArr[0] - stockArr[2]) * stockArr[1];
@@ -32,7 +38,9 @@ function calculateProfitOrLoss(stockArr){
 
         document.body.style.backgroundColor = "rgba(255, 0, 0, 0.76)"
     } else {
-        showMessage("If you'd put in the effort then you'd see some change here :)")
+        showMessage("No risk, No pleasure :)")
+        document.body.style.backgroundColor = "rgba(0, 183, 255, 0.5)"
+
     }
 }
 
