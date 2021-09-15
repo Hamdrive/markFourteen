@@ -8,23 +8,23 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     height: 100vh;
     background-color: #7e00f35b;
+    display: flex;
+    flex-direction: column;
 }
 
 .title{
     font-size: 2.75rem;
     font-weight: 600;
-    margin-bottom: 0.7rem;
+    margin-bottom: auto;
+    padding: 1rem;
+    text-align: center;
+    background-color: #7e00f35b;
 }
 
 .stock-inputs{
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 
 .init, .qty, .curr{
@@ -36,16 +36,18 @@ body{
     margin-bottom: 1.5rem;
 }
 
-label{
-    margin-bottom: 0.7rem;
-}
-
 input{
     font-size: 1.5rem;
     padding: 0.4rem;
     border-radius: 0.8rem;
     text-align: center;
     border: 2px solid black;
+}
+
+.calc{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.75rem;
 }
 
 #calc-btn {
@@ -57,6 +59,7 @@ input{
     text-decoration: none;
     border: 2px solid #000000;
     font-weight: 600;
+    margin: 0 auto;
 }
 
 #calc-btn:hover {
@@ -70,6 +73,43 @@ input{
     margin: 1rem;
     font-size: 1.5rem;
     font-weight: 600;
+    display: flex;
+    justify-content: center;
+}
+
+.icons{
+    display: flex;
+    justify-content: center;
+}
+
+.icons i{
+    margin: 0 2rem;
+    color: black;
+}
+
+.icons i:hover{
+    color: #8400ff;
+}
+
+.bottom-container{
+    background-color: #7e00f35b;
+    height: 100px;
+    width: 100%;
+    margin-top: auto;
+    padding: 1rem 0;
+}
+
+.footer-link{
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.copyright{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0.5rem;
 }
 
 
