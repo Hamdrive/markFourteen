@@ -6,7 +6,7 @@ function handleClick(){
     var stockArr = [];
     for(var index = 0; index < stocksInfo.length; index++){
         if(stocksInfo[index].value){
-            stockArr[index] = stocksInfo[index].value;
+            stockArr[index] = Number(stocksInfo[index].value);
         } else {
             showMessage("If you have'nt invested anything, why are you here?");
             return;
@@ -22,6 +22,7 @@ function handleClick(){
 function checkValues(stockArr){
     return stockArr.every((val) => val > 0);
 }
+
 function calculateProfitOrLoss(stockArr){
     if(stockArr[0] < stockArr[2]){
         var profit = (stockArr[2] - stockArr[0]) * stockArr[1];
